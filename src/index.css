@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #ffec8b;
+}
+main{
+  background-color:#93dc4c;
+  box-shadow:0px 1px 20px black;
+}
+#charts-container{
+  width:80%;
+  margin:auto;
+}
+h1{
+  font-family: Ultra;
+  color:#291400;
+}
+h5{
+  font-family: Fugaz, Georgia;
+  color:#670000;
+}
+p, form {
+  font-family: Fugaz, Georgia;
+  color:#291400;
+}
+
+.chart-item{
+  text-align:center;
+  border:1px solid #670000;
+  border-radius:5px;
+  margin-top:5em;
+}
+.chart-holder{
+  text-align:center;
+  background-color:#ffec8b;
+  border:1px solid #670000;
+  border-radius:5px;
+}
+.chart-item h1{
+  font-family: Ultra;
+  color:#291400;
+}
+.chart-item p{
+  font-family: Fugaz;
+  color:#291400;
+}
