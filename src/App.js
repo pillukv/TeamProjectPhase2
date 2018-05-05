@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import ChartItem from './components/ChartItem';
+import BarChart from './components/BarChart.js';
+import PieChart from './components/PieChart.js';
+
 
 class App extends Component {
   constructor(){

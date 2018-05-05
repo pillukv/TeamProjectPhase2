@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import {Bar} from 'react-chartjs-2';
+import {Pie} from 'react-chartjs-2';
 const data = require('./coffee.json');
 
 //Create an array of data objects from 2017, as this chart will only be displaying data for that year.     
 var array2017 = [];
-for (i = 0; i < data.length; i++) {
-    if (data[i].Market_Year == 2017) {
+for (var i = 0; i < data.length; i++) {
+    if (data[i].Market_Year === 2017) {
         array2017.push(data[i]);
     }
 }; 
@@ -14,13 +14,13 @@ for (i = 0; i < data.length; i++) {
 function bubbleSort(array){
     var length = array.length;
     for (i = 0; i < length; i++) { //number of passes through the array of values
-    for (x = 0; x < length - i - 1; x++){
-        if (array[x].Bean_Import < array[x+1].Bean_Import){
-        var temp = array[x];
-        array[x] = array[x+1];
-        array[x+1] = temp;
+        for (var x = 0; x < length - i - 1; x++){
+            if (array[x].Bean_Import < array[x+1].Bean_Import){
+            var temp = array[x];
+            array[x] = array[x+1];
+            array[x+1] = temp;
+            }
         }
-    }
     }
 }
 bubbleSort(array2017);
@@ -49,7 +49,7 @@ for (i = 0; i < (beanImportChartData.length - 1); i++) {
 }
 beanImportChartLabels.push('Other');
 
-var data = {
+var chartData = {
     labels: beanImportChartLabels,
     datasets: [
         {
@@ -64,7 +64,7 @@ class PieChart extends Component {
     render(){
         return (
             <div className="chart">
-                <Pie data={this.state.chartData} />
+                <Pie data={chartData} />
             </div>
         )
     }
