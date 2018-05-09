@@ -1,32 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>The Global Coffee Trade</title>
     <meta charset="utf-8">
+    <meta name="Description" content="Data Visualization Team Deliverable 1">
+    <meta name="Keywords" content="Coffee, Trade, Data, Information, Graphs, Charts, Visualization">
+    <meta name="Author" content="Luke Pilon, Angie Toner, Will Pellegrene">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <!-- JavaScript Tools Used: Google Charts, JQuery, Popper.js, BootStrap, and Charts.js-->
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <style>
+      /*Plant Theme
+          Red: #670000
+          Green: #360
+          Light-Green: #93dc4c
+          Dark: #291400
+          Light: #ffec8b
+      */
+  
+      /*FONTS*/
+        /*Ultra*/
+      @font-face{
+        font-family: Ultra;
+        src: url(fonts/Ultra/Ultra-Regular.ttf);
+      }
+        /*Fugaz One*/
+      @font-face{
+        font-family: Fugaz;
+        src: url(fonts/Fugaz_One/FugazOne-Regular.ttf);
+      }
+        /*Titillium*/
+      @font-face{
+        font-family: Titillium-Bold;
+        src: url(fonts/Titillium_Web/TitilliumWeb-Bold.ttf);
+      }
+      @font-face{
+        font-family: Titillium-Italic;
+        src: url(fonts/Titillium_Web/TitilliumWeb-Italic.ttf);
+      }
+      @font-face{
+        font-family: Titillium-Light;
+        src: url(fonts/Titillium_Web/TitilliumWeb-Light.ttf);
+      }
+      @font-face{
+        font-family: Titillium-Regular;
+        src: url(fonts/Titillium_Web/TitilliumWeb-Regular.ttf);
+      }
+      @font-face{
+        font-family: Titillium-SemiBold;
+        src: url(fonts/Titillium_Web/TitilliumWeb-SemiBold.ttf);
+      }
+      .imageWrapper {
+        width:100%; 
+        margin-top:4em;
+      }
+      main {
+        margin-bottom: 4em;
+      }
+    </style>        
   </head>
   <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="barChart"></div>
-    <div id="pieChart"></div>
-    <div id="footer"></div>
+    <header>
+        <nav class="navbar navbar-light">
+          <ul class="navbar-nav mr-auto" style="flex-direction:row;">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#chart1">Data</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#sources">Sources</a>
+            </li>
+          </ul>
+          <h1>The Global Coffee Trade</h1>
+        </nav>
+    </header>
+    <main>
+      <div class="jumbotron jumbotron-fluid" id="jumbo"></div>
+      <div class="container-fluid" id="charts-container">
+        <div id="introText">
+          <h4 style="text-align:center">Cultivated in over 70 countries by thousands of independent farmers coffee is one of the oldest traded commodities in the world.  The rich history dates back to the 11th century with lore of a common herdsman observing their goat eating the red cherries growing on an unknown shrub.  The goats danced with excitement and the herdsman gathered up the cherries and brought them into the village.  The fruit at first glance was of little interest and seemed to lack value. Until cast into the fire when the cherry began to burn away and the sweet aroma of the first roasted bean began to rise.  Thus goes the story of the “Dancing Goats” and the discovery of a very stimulating and delicious humble bean.</h4>
+        </div>
+        <div class="chart-item" id="chart1">
+          <h1>Global Coffee Consumption</h1>
+          <p style="text-align:center; padding:2em;">What we taste and how we consume is culturally defining, we make ritual our habits. This pie chart shows the top importers of green coffee beans worldwide.  The three largest slices of the pie represent the European Union, the United States and Japan.  With focus on productivity, trend and a changing definition of the modern work life balance, coffee is an obvious plant ally.   Café goers, home brewers and your ride or die, get it done at work coffee drinkers-it is your own.  There is no wrong or right way to experience coffee.<br><br>
+              This chart shows the amount of beans imported by the world's largest coffee consumers, measured in 60kg bags.
+          </p>
+          <div class="chart-holder" id="pieChart">
+          </div>
+        </div>
+        <div class="imageWrapper">
+          <img src="bean_warehouse.png" style="width:100%;" alt="Bagged Coffee Beans in a Warehouse">
+        </div>
+        <div class="chart-item" id="chart2">
+          <h1>Global Coffee Production</h1>
+          <p style="text-align:center; padding:2em 2em 0 2em;">2017 data provided by the United States Department of Agriculture allows us to explore global production of coffee by looking at volume of green beans grown, exported, imported and consumed.  You will discover two types of distinct coffee varieties. The Arabica, known for its refined sweet flavor and high acidity and the Robusta, known to have a bitter sharp flavor that produces some of the most desired top quality espresso.  Making famous the Italian Espresso with its thick and flavorful crema. 
+            The Arabica variety makes up 60% of the coffee grown globally and almost exclusively represents the gourmet market.  This commodity often comes at a higher price point and tends to be overall a more fragile plant.  The Robusta variety makes up the other 37-40% of production and thought to provide a greater crop yield at a lower production price point.<br><br>
+            This chart will show the Robusta and Arabica production of the world's biggest coffee growers, measured in 60kg bags.  Select a year to view the data:
+          </p>
+          <form style="display:inline;">
+            <select id="productionyearselect">
+              <option value="2003">2003</option>
+              <option value="2004">2004</option>
+              <option value="2005">2005</option>
+              <option value="2006">2006</option>
+              <option value="2007">2007</option>
+              <option value="2008">2008</option>
+              <option value="2009">2009</option>
+              <option value="2010">2010</option>
+              <option value="2011">2011</option>
+              <option value="2012">2012</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+            </select>
+            <button id="yearinput" name="yearinput" type="button">View</button>
+          </form>
+          <div class="chart-holder" id="barChart">
+          </div>
+        </div>
+        <div class="imageWrapper">
+          <img src="coffeefields_Columbia.PNG" style="width:100%;" alt="Coffee Fields in Colombia">
+        </div>
+        <div class="chart-item">
+          <h1>Trade: Import and Export</h1>
+          <p style="text-align:center; padding:2em;">With exports forecasted to continue sliding to a 5 year low and consumption expected to continue growing, the market has a few challenges to face.  In this global map chart the red color represents the regions of the world with higher import records and consumption.  The areas of the map represented in the green mark regions of the world that have high export records and often lower records of consumption.  
+            Environmental changes like above average temperatures and prolonged dry spells can make for unstable sourcing.  The fungus that causes “Coffee Rust” has plagued growers for more than a century.  The high pressure to produce volume can be detrimental to agricultural communities where coffee production is their main source of income, health and livelihood.  
+            One trend in the current coffee culture that brings promise to a complicated economy is the Direct Trade movement.  This model has roasters buying straight from the growers, the collaboration allows them to document and analyze every step of the process.  They are then able to fine tune and plan for a changing global climate and unforeseen obstacles in development.  This effort elevates the expertise of the growers and supports the local economy with fair trade wages and room for growth.  These relationships take time and money to foster but have the potential to address issues of herbicides and pesticides, disposal of wastewater and maintenance of forest cover.  Overall supporting a healthy biodiversity and a sustained source of some of the finest single origin coffees.<br><br>
+            This chart shows the world's coffee bean importers and exporters, with red representing import and green respresenting export.  The darker the shade, the larger the scale of import/export (again measured in 60kg bags).
+          </p>
+        </div>
+        </div>
+        <div id="importExportMap" style="width:100%; margin-bottom:8em;"></div>
+    </main>
+    <footer id="footer"></footer>        
   </body>
 </html>

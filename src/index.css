@@ -1,47 +1,166 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: #ffec8b;
-}
-main{
-  background-color:#93dc4c;
-  box-shadow:0px 1px 20px black;
-}
-#charts-container{
-  width:80%;
-  margin:auto;
-}
-h1{
-  font-family: Ultra;
-  color:#291400;
-}
-h5{
-  font-family: Fugaz, Georgia;
-  color:#670000;
-}
-p, form {
-  font-family: Fugaz, Georgia;
-  color:#291400;
-}
+  /*MEDIA QUERIES*/
+  @media (min-width: 768px){
+    #charts-container{
+      width:80%;
+    }
+  }
+  @media (max-width: 768px){
+    #jumboHeader{
+      font-size:2rem;
+    }
+    #charts-container{
+      width:100%;
+    }
+    #importExportContainer {
+      width: 90%;
+    }
+  }
 
-.chart-item{
-  text-align:center;
-  border:1px solid #670000;
-  border-radius:5px;
-  margin-top:5em;
-}
-.chart-holder{
-  text-align:center;
-  background-color:#ffec8b;
-  border:1px solid #670000;
-  border-radius:5px;
-}
-.chart-item h1{
-  font-family: Ultra;
-  color:#291400;
-}
-.chart-item p{
-  font-family: Fugaz;
-  color:#291400;
-}
+  /*Plant Theme
+      Red: #670000
+      Green: #360
+      Light-Green: #93dc4c
+      Dark: #291400
+      Light: #ffec8b
+  */
+
+  /*GENERAL*/
+  h1{
+    font-family: Ultra;
+    color:#291400;
+  }
+  h5{
+    font-family: Fugaz, Georgia;
+    color:#670000;
+  }
+  p, form {
+    font-family: Fugaz, Georgia;
+    color:#291400;
+  }
+  /*HEADER*/
+  header{
+    background-color: #ffec8b;
+  }
+
+  /*NAV*/
+  nav {
+    background-color: #93dc4c;
+  }
+  .nav-link{
+    color:#ffec8b;
+    font-family: Fugaz, Georgia;
+    font-size:22px;
+  }
+
+  .nav-item{
+    padding:0.7em;
+  }
+  .display-4,.lead{
+    color:#ffec8b;
+  }
+
+  /*BODY*/
+  body{
+    background-color: #ffec8b;
+  }
+
+  /*MAIN*/
+  main{
+    background-color:#93dc4c;
+    box-shadow:0px 1px 20px black;
+  }
+
+  #jumbo{
+    background-image: url("images/headerImg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px 4px 20px 0px black;
+    height: 450px;
+  }
+
+  /*CHART-ITEM*/
+  .chart-item{
+    text-align:center;
+    border:1px solid #670000;
+    border-radius:5px;
+    margin-top:5em;
+  }
+  .chart-holder{
+    text-align:center;
+    background-color:#ffec8b;
+    border:1px solid #670000;
+    border-radius:5px;
+  }
+  .chart-item h1{
+    font-family: Ultra;
+    color:#291400;
+  }
+  .chart-item p{
+    font-family: Fugaz;
+    color:#291400;
+  }
+
+  /*BUTTONS*/
+  .btn{
+    font-family: Fugaz, Georgia;
+  }
+  .btn-dark {
+    background-color: #291400;
+    color: #ffec8b;
+  }
+  .btn-dark:hover{
+    background-color: #ffec8b;
+    color: #291400;
+  }
+  .btn-light{
+    background-color: #ffec8b;
+    color: #291400;
+  }
+  .btn-light:hover{
+    background-color: #291400;
+    color: #ffec8b;
+  }
+  .btn-link{
+    color:#291400;
+  }
+
+  /*SOURCES*/
+  #sources{
+    width:70%;
+    margin:auto;
+    border-top:1px solid black;
+    
+  }
+
+  /*FOOTER*/
+  footer{
+    width:95%;
+    margin:auto;
+    text-align:center;
+  }
+
+  /*CARDS and ANIMATIONS*/
+  .card{
+    background-color: #ffec8b;
+  }
+
+  .card, .chart-item{
+    -webkit-transform: scale(1);
+  	transform: scale(1);
+  	-webkit-transition: .3s ease-in-out;
+  	transition: .3s ease-in-out;
+  }
+  .card:hover, .chart-item:hover{
+    -webkit-transform: scale(1.1);
+	   transform: scale(1.1);
+     box-shadow: 0px 4px 20px 0px #670000;
+  }
+
+  header a{
+    -webkit-transition: .2s ease-in-out;
+  	transition: .2s ease-in-out;
+  }
+
+  header a:hover{
+    text-shadow:0px 3px 3px #360;
+  }
