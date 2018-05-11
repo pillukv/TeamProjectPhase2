@@ -8,5 +8,5 @@ import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<BarChart />, document.getElementById('barChart'));
 ReactDOM.render(<PieChart />, document.getElementById('pieChart'));
-ReactDOM.render(<Footer />, document.getElementById('footer'))
+ReactDOM.render(<Footer />, document.getElementById('footer'));
 registerServiceWorker();
