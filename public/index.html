@@ -93,20 +93,8 @@
           <p style="text-align:center; padding:2em;">What we taste and how we consume is culturally defining, we make ritual our habits. This pie chart shows the top importers of green coffee beans worldwide.  The three largest slices of the pie represent the European Union, the United States and Japan.  With focus on productivity, trend and a changing definition of the modern work life balance, coffee is an obvious plant ally.   Café goers, home brewers and your ride or die, get it done at work coffee drinkers-it is your own.  There is no wrong or right way to experience coffee.<br><br>
               This chart shows the amount of beans imported by the world's largest coffee consumers, measured in 60kg bags.
           </p>
-          <div class="chart-holder" id="pieChart">
-          </div>
-        </div>
-        <div class="imageWrapper">
-          <img src="bean_warehouse.png" style="width:100%;" alt="Bagged Coffee Beans in a Warehouse">
-        </div>
-        <div class="chart-item" id="chart2">
-          <h1>Global Coffee Production</h1>
-          <p style="text-align:center; padding:2em 2em 0 2em;">2017 data provided by the United States Department of Agriculture allows us to explore global production of coffee by looking at volume of green beans grown, exported, imported and consumed.  You will discover two types of distinct coffee varieties. The Arabica, known for its refined sweet flavor and high acidity and the Robusta, known to have a bitter sharp flavor that produces some of the most desired top quality espresso.  Making famous the Italian Espresso with its thick and flavorful crema. 
-            The Arabica variety makes up 60% of the coffee grown globally and almost exclusively represents the gourmet market.  This commodity often comes at a higher price point and tends to be overall a more fragile plant.  The Robusta variety makes up the other 37-40% of production and thought to provide a greater crop yield at a lower production price point.<br><br>
-            This chart will show the Robusta and Arabica production of the world's biggest coffee growers, measured in 60kg bags.  Select a year to view the data:
-          </p>
           <form style="display:inline;">
-            <select id="productionyearselect">
+            <select id="productionyearselect" onChange="renderBarChart()">
               <option value="2003">2003</option>
               <option value="2004">2004</option>
               <option value="2005">2005</option>
@@ -124,8 +112,21 @@
               <option value="2017">2017</option>
             </select>
             <button id="yearinput" name="yearinput" type="button">View</button>
-          </form>
-          <div class="chart-holder" id="barChart">
+          </form>    
+          <div class="chart-holder" id="pieChart">
+          </div>
+        </div>
+        <div class="imageWrapper">
+          <img src="bean_warehouse.png" style="width:100%;" alt="Bagged Coffee Beans in a Warehouse">
+        </div>
+        <div class="chart-item" id="chart2">
+          <div className="chart">
+            <h1>Global Coffee Production</h1>
+            <p>2017 data provided by the United States Department of Agriculture allows us to explore global production of coffee by looking at volume of green beans grown, exported, imported and consumed.  You will discover two types of distinct coffee varieties. The Arabica, known for its refined sweet flavor and high acidity and the Robusta, known to have a bitter sharp flavor that produces some of the most desired top quality espresso.  Making famous the Italian Espresso with its thick and flavorful crema. 
+                The Arabica variety makes up 60% of the coffee grown globally and almost exclusively represents the gourmet market.  This commodity often comes at a higher price point and tends to be overall a more fragile plant.  The Robusta variety makes up the other 37-40% of production and thought to provide a greater crop yield at a lower production price point.<br /><br />
+                This chart will show the Robusta and Arabica production of the world's biggest coffee growers, measured in 60kg bags.  Select a year to view the data:
+            </p>
+          <div class="chart-holder" id="barChart"></div>
           </div>
         </div>
         <div class="imageWrapper">
