@@ -12,7 +12,6 @@ class BarChart extends Component {
 
     changeYear = () => {
         var newYear = document.getElementById('productionyearselect').value
-        console.log(newYear)
         this.setState({year: newYear})
     }
 
